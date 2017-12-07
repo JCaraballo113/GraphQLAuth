@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { graphql } from 'react-apollo';
 import { AuthForm } from './AuthForm';
 import mutation from '../mutations/Signup';
+import { queryCurrentUser } from '../queries/Queries';
 
 export class SignupForm extends Component {
   constructor(props) {
@@ -11,7 +12,8 @@ export class SignupForm extends Component {
 
   onSubmit({email, password}) {
     this.props.mutate({
-      variables: { email, password }
+      variables: { email, password },
+      refetchQueries: [{ query: queryCurrentUser }]
     }).catch(res => {
       const errors = res.graphQLErrors.map(error => error.message);
       this.setState({ errors });
