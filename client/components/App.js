@@ -8,7 +8,7 @@ const App = ({children}) => {
       <Header/>
       {children}
     </div>
-  )
+  );
 };
 
 export default App;
