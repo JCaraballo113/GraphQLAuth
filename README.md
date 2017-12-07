@@ -1,2 +1,2 @@
-# auth-graphql-starter
-Starter project from a GraphQL course on Udemy.com - Section 3!
+# GraphQL-Auth
+A simple application to do authentication using GraphQL
